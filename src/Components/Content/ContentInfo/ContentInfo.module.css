@@ -1,0 +1,11 @@
+.description {
+    padding: 10px;
+}
+.img {
+    padding: 10px;
+    margin-left: 100px;
+    text-align: center;
+    width: 75%;
+    height: 500px;
+    border-radius: 5%;
+}

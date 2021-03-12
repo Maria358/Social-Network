@@ -1,0 +1,20 @@
+.nav{
+    grid-area: n;
+    background-color: #100d0d;
+    padding: 10px;
+    font-family: "Times New Roman", Times, serif;
+    font-size:19px;
+   }
+.item a{
+    color: #fcfcfc;
+    text-decoration: none;
+
+}
+.item a.activeLink{
+    color: #665b5b;
+}
+.logo img{
+    padding: 10px;
+    border-radius: 30%;
+    width:40px
+}
