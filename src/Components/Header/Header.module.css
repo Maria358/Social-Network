@@ -1,6 +1,6 @@
 header{
     grid-area: h;
-    background-color: rgb(49, 51, 53);
+    background-color: #aebfcf;
    }
    
 .header img{
@@ -11,4 +11,7 @@ header{
 }
 .loginBlock a {
     color: white
+}
+.login{
+    color:white;
 }

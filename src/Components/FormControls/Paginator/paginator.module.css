@@ -1,0 +1,8 @@
+.paginator{
+    margin: 10px;
+}
+.activePage{
+    padding: 2px;
+    font-weight: bold;
+    border: 1px solid grey;
+}

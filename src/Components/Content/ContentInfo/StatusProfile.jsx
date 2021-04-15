@@ -1,4 +1,3 @@
-import s from './ContentInfo.module.css'
 import * as React from "react";
 
 export class StatusProfile extends React.Component {
@@ -6,13 +5,13 @@ export class StatusProfile extends React.Component {
         editMode: false,
         status: this.props.status
     }
-    activateEditMode = () =>{
-        this.setState ({
+    activateEditMode = () => {
+        this.setState({
             editMode: true
         })
     }
     deactivateEditMode = () => {
-        this.setState ({
+        this.setState({
             editMode: false
         })
         this.props.updateStatus(this.state.status)
@@ -22,14 +21,24 @@ export class StatusProfile extends React.Component {
             status: e.currentTarget.value
         })
     }
-    render(){
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.status !== this.props.status) {
+            this.setState({
+                state: this.props.status
+            })
+        }
+    }
+
+    render() {
         return (
             <div>
-               <div>
-                   {this.state.editMode
-                       ? <input onChange={this.onStatusChange} autoFocus={true} value={this.state.status || '--------'} onBlur={this.deactivateEditMode}/>
-                           : <span onDoubleClick={this.activateEditMode}>{this.props.status}</span>}
-               </div>
+                <div>
+                    {this.state.editMode
+                        ? <input onChange={this.onStatusChange} autoFocus={true} value={this.state.status || '--------'}
+                                 onBlur={this.deactivateEditMode}/>
+                        : <span onDoubleClick={this.activateEditMode}>{this.props.status}</span>}
+                </div>
             </div>
         )
 

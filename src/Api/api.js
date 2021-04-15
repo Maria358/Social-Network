@@ -19,10 +19,6 @@ export const userAPI = {
     },
     follow (userId) {
         return instance.post(`follow/${userId}`)
-    },
-    getProfile (userId) {
-        console.warn('You have used old method. Please use profileAPI object')
-        return profileAPI.getProfile(userId)
     }
 }
 
@@ -35,13 +31,31 @@ export const profileAPI = {
     },
     updateStatus (status) {
         return instance.put(`profile/status`, {status: status})
+    },
+    savePhoto (photos) {
+        const data = new FormData();
+        data.append('image', photos);
+        return instance.put(`profile/photo`, data, {
+            headers: {
+                'Content-Type': `multipart/form-data`
+            }
+        })
+    },
+    saveData (profile) {
+        return instance.put(`profile`, profile)
     }
 }
 
 export const authAPI = {
     getAuthMe () {
         return instance.get(`auth/me`)
-    }
+    },
+    login (email, password, rememberMe) {
+        return instance.post(`auth/login`, {email, password, rememberMe})
+    },
+    logout () {
+        return instance.delete(`auth/login`)
+    },
 }
 
 

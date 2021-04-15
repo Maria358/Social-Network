@@ -45,8 +45,6 @@ let store = {
         this._state.sidebarPage = sidebarReducer(this._state.sidebarPage, action)
 
         this._rerenderEntireTree(this._state)
-
-
     }
 }
 

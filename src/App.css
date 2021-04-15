@@ -41,7 +41,7 @@
     margin: 0 auto;
     display: grid;
     width: 1200px;
-    background-color: blanchedalmond;
+    background-color: #c1d5e0;
     grid-template-areas:
   "h h"
   "n c";

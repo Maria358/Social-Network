@@ -1,20 +1,59 @@
 .nav{
     grid-area: n;
-    background-color: #100d0d;
+    background-color: #8da2ac;
     padding: 10px;
-    font-family: "Times New Roman", Times, serif;
-    font-size:19px;
-   }
-.item a{
-    color: #fcfcfc;
-    text-decoration: none;
-
+    font-family: DejaVu Sans Mono, monospace;
+    font-size:16px;
 }
-.item a.activeLink{
-    color: #665b5b;
+.list {
+    margin-bottom: 8px;
+    padding:0;
+    list-style: none;
 }
-.logo img{
-    padding: 10px;
-    border-radius: 30%;
-    width:40px
+.list li {
+    position: relative;
+    border: 2px solid #DDDDDD;
+    background: #FAFAFA;
+    padding:16px 20px 16px 28px;
+    margin:12px 0 12px 40px;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.list li:hover {
+    background: #F0F5FB;
+    border: 2px solid #ADCEE9;
+}
+.list li:before {
+    line-height: 32px;
+    position: absolute;
+    top: 4px;
+    left:-40px;
+    width:40px;
+    text-align:center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFF;
+    background: #77AEDB;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+.list li:hover:before {
+    width:46px;
+    background: #337AB7;
+}
+.list li:after {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    content: "";
+    height: 0;
+    width: 0;
+    border: 16px solid transparent;
+    border-left-color: #77AEDB;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s
+}
+.list li:hover:after {
+    margin-left: 6px;
+    border-left-color: #337AB7;
 }
